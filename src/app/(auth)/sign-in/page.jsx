@@ -22,14 +22,14 @@ const SignInPage = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
-    const data = Object.fromEntries(formData.entries());
-    console.log(data);
-    const { resdata, error } = await signIn.email({
-      email: data.email,
-      password: data.password,
+    const userData = Object.fromEntries(formData.entries());
+    console.log(userData);
+    const { resData:data, error } = await signIn.email({
+      email: userData.email,
+      password: userData.password,
       callbackURL:"/"
     });
-    console.log("the data from sign in", resdata, error);
+    console.log("the data from sign in", data, error);
   };
   return (
     <div>

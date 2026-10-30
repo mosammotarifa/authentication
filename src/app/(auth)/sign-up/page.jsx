@@ -29,6 +29,12 @@ const SignUpPage = () => {
       password: userData.password,
       callbackURL: "/",
     });
+    if(error){
+      alert("not ok")
+    }
+    if(data){
+      alert('ok')
+    }
     console.log("the data from sign up", data);
     console.log("the data from sign up", error);
     console.log("Signup response:", { data, error });
